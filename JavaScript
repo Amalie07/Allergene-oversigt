@@ -1,0 +1,28 @@
+const dishes = [
+    { name: "Tomatsalat med hvidløg og urter", allergens: ["Hvidløg", "Pinjekerner"] },
+    { name: "Cremet kartoffelsuppe", allergens: ["Mælk", "Hvidløg"] },
+    { name: "Cremet og krydret tomatsuppe", allergens: ["Mælk", "Selleri", "Hvidløg"] },
+    { name: "Samosa med krydret humus", allergens: ["Gluten", "Soya", "Sesam", "Hvidløg", "Mælk", "Selleri"] },
+    // Tilføj alle retterne her
+];
+
+function filterMenu() {
+    const selectedAllergens = Array.from(document.querySelectorAll('input[name="allergen"]:checked'))
+        .map(input => input.value);
+    const filteredDishes = dishes.filter(dish => 
+        !dish.allergens.some(allergen => selectedAllergens.includes(allergen))
+    );
+
+    const menuList = document.getElementById("menu-list");
+    menuList.innerHTML = "";
+
+    if (filteredDishes.length === 0) {
+        menuList.innerHTML = "<li>Ingen retter passer til de valgte allergener.</li>";
+    } else {
+        filteredDishes.forEach(dish => {
+            const listItem = document.createElement("li");
+            listItem.textContent = dish.name;
+            menuList.appendChild(listItem);
+        });
+    }
+}
