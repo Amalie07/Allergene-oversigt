@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergenguide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flammens Allergenguide</h1>
+    <p>Vælg de allergener, du vil undgå:</p>
+    <form id="allergen-form">
+        <div>
+            <label><input type="checkbox" name="allergen" value="Mælk"> Mælk</label>
+            <label><input type="checkbox" name="allergen" value="Gluten"> Gluten</label>
+            <label><input type="checkbox" name="allergen" value="Æg"> Æg</label>
+            <label><input type="checkbox" name="allergen" value="Soya"> Soya</label>
+            <label><input type="checkbox" name="allergen" value="Hvidløg"> Hvidløg</label>
+            <label><input type="checkbox" name="allergen" value="Nødder"> Nødder</label>
+            <label><input type="checkbox" name="allergen" value="Fisk"> Fisk</label>
+            <label><input type="checkbox" name="allergen" value="Sennep"> Sennep</label>
+            <label><input type="checkbox" name="allergen" value="Selleri"> Selleri</label>
+            <label><input type="checkbox" name="allergen" value="Sesam"> Sesam</label>
+            <label><input type="checkbox" name="allergen" value="Sulfitter"> Sulfitter</label>
+            <label><input type="checkbox" name="allergen" value="Krebsdyr"> Krebsdyr</label>
+        </div>
+        <button type="button" onclick="filterMenu()">Vis egnede retter</button>
+    </form>
+    <h2>Retter du kan spise:</h2>
+    <ul id="menu-list"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
